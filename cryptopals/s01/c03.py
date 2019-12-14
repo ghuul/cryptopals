@@ -14,7 +14,3 @@ def main():
     scorer = scoring.Scorer(2)
     r = xor.break_single_byte_xor(bs, scorer)
     print(r)
-
-
-if __name__ == '__main__':
-    main()

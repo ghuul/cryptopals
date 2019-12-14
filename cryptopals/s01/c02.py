@@ -14,7 +14,3 @@ def main():
     # Run fixed XOR on both byte arrays.
     r = xor.fixed_xor(b1, b2).hex()
     print(r)
-
-
-if __name__ == '__main__':
-    main()

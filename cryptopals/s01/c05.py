@@ -15,7 +15,3 @@ def main():
     # Repeating key XOR with key 'ICE'.
     r = xor.repeating_key_xor(bs, key)
     print(r.hex())
-
-
-if __name__ == '__main__':
-    main()

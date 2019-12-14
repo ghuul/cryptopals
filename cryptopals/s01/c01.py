@@ -24,7 +24,3 @@ def main():
     # Encode bytes as hex.
     h = b.hex()
     print(h)
-
-
-if __name__ == '__main__':
-    main()
