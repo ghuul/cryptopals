@@ -4,11 +4,11 @@
 cryptopals.py
 """
 
-from cryptopals.s02 import c09
+from cryptopals.s02 import c10
 
 
 def main():
-    c09.main()
+    c10.main()
 
 
 if __name__ == '__main__':
