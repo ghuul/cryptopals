@@ -3,10 +3,10 @@ aes.py
 """
 
 import itertools
-import cryptopals.util as util
+from cryptopals import util
 
 
-def detect_aes_ecb(ctexts):
+def detect_ecb(ctexts):
     """
     Given a list of ciphertexts, determines which one is most likely to be
     AES in ECB mode.
@@ -29,3 +29,6 @@ def detect_aes_ecb(ctexts):
     rets.sort(key=lambda x: x[0])
     return rets[0]
 
+
+def ecb_cbc_oracle():
+    return 0

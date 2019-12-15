@@ -12,15 +12,16 @@ def main():
             '736f6e6f7573206d757368726f6f6d')
 
     # Decode hex to bytes.
-    b = bytes.fromhex(h)
+    b = bytearray.fromhex(h)
+    print b
 
     # Encode bytes as base64.
     r = base64.encodestring(b).decode('utf-8')[:-1]
-    print(r)
+    print r
 
     # Decode base64 to bytes.
-    b = base64.decodestring(bytes(r, 'utf-8'))
+    b = base64.decodestring(bytes(r))
 
     # Encode bytes as hex.
-    h = b.hex()
-    print(h)
+    h = b.encode('hex')
+    print h

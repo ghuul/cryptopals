@@ -11,7 +11,7 @@ def pkcs7(bs, block_size):
     pad = block_size - len(bs)%block_size
 
     # Pad with padding length and return.
-    bs = list(bs)
+    bs = bytearray(bs)
     for _ in range(pad):
         bs.append(pad)
-    return bytes(bs)
+    return bs

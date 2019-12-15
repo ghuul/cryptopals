@@ -3,30 +3,30 @@ xor.py
 """
 
 import itertools
-import cryptopals.util as util
+from cryptopals import util
 
 
-def fixed_xor(b1, b2):
+def fixed(b1, b2):
     """
     XORs two given sets of bytes, of equal length, together.
     """
-    # Ensure that bytes arrays are of equal length.
+    # Ensure that byte arrays are of equal length.
     if len(b1) != len(b2):
         raise "Byte arrays are not of equal length."
 
     # XOR byte arrays together and return.
-    return bytes([x ^ y for x, y in zip(b1, b2)])
+    return bytearray([x ^ y for x, y in zip(b1, b2)])
 
 
-def single_byte_xor(bs, b):
+def single_byte(bs, b):
     """
     Implementation of a single-byte XOR cipher.
     """
     # XOR each byte in the array with the single byte and return.
-    return bytes([bt ^ b for bt in bs])
+    return bytearray([bt ^ b for bt in bs])
 
 
-def break_single_byte_xor(bs, scorer):
+def break_single_byte(bs, scorer):
     """
     Breaks a single-byte XOR cipher.
     """
@@ -34,35 +34,35 @@ def break_single_byte_xor(bs, scorer):
     # plaintext before appending to array of tuples.
     rets = []
     for i in range(256):
-        p = ''.join([chr(v) for v in single_byte_xor(bs, i)])
-        rets.append((scorer.score(p), i, p))
+        pt = single_byte(bs, i)
+        rets.append((scorer.score(pt), i, pt))
 
     # Return the plaintex with the highest score.
     rets.sort(key=lambda x: x[0], reverse=True)
     return rets[0]
 
 
-def detect_single_byte_xor(ctexts, scorer):
+def detect_single_byte(ctexts, scorer):
     """
     Detects single-byte XOR in a list of single-byte XORed ciphertexts.
     """
     # Find the best result for each ciphertext.
-    rets = [break_single_byte_xor(c, scorer) for c in ctexts]
+    rets = [break_single_byte(c, scorer) for c in ctexts]
     
     # Return the result with the highest score.
     rets.sort(key=lambda x: x[0], reverse=True)
     return rets[0]
 
 
-def repeating_key_xor(bs, key):
+def repeating_key(bs, key):
     """
     Implementation of repeating-key XOR.
     """
     # XOR each byte of the byte array with its appropriate key byte.
-    return bytes([bs[i] ^ key[i%len(key)] for i in range(len(bs))])
+    return bytearray([bs[i] ^ key[i%len(key)] for i in range(len(bs))])
 
 
-def break_repeating_key_xor(bs, scorer):
+def break_repeating_key(bs, scorer):
     """
     Breaks a repeating-key XOR cipher.
     """
@@ -73,7 +73,7 @@ def break_repeating_key_xor(bs, scorer):
                 [bs[i:i+ks] for i in range(0, len(bs), ks)], 2)
         dists = [util.hamming_distance(p[0], p[1])/ks for p in perms
                 if len(p[0]) == len(p[1])]
-        kss.append((ks, sum(dists) / len(dists)))
+        kss.append((ks, sum(dists) / float(len(dists))))
 
     # Find the best keysize.
     kss.sort(key=lambda x: x[1])
@@ -85,7 +85,7 @@ def break_repeating_key_xor(bs, scorer):
     # Solve each block as single-byte XOR.
     key = []
     for block in blocks:
-        _, b, _ = break_single_byte_xor(block, scorer)
+        _, b, _ = break_single_byte(block, scorer)
         key.append(b)
 
-    return (bytes(key), repeating_key_xor(bs, bytes(key)))
+    return (bytearray(key), repeating_key(bs, bytearray(key)))

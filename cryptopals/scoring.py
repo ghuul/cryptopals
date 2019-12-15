@@ -24,18 +24,18 @@ class Scorer:
         fp.close()
 
         # Generate the probability dictionary.
-        total = sum(self.freqs.values())
+        total = float(sum(self.freqs.values()))
         self.probs = {key:(self.freqs[key]/total) for key in self.freqs}
 
 
-    def score(self, s):
+    def score(self, bs):
         """
         Scores a given plaintext. The higher the output value, the more like
         english the plaintext is.
         """
         # Convert the text to upper-case as all keys in the dictionary are
         # upper-case values.
-        s = s.upper()
+        s = ''.join([chr(v) for v in bs]).upper()
 
         # Return the sum of the probabilities that the characters exist within
         # the english language.
