@@ -9,6 +9,8 @@ def pkcs7(bs, block_size):
     """
     # Find the amount needed to pad to correct length.
     pad = block_size - len(bs)%block_size
+    if pad == 0:
+        pad = block_size
 
     # Pad with padding length and return.
     bs = bytearray(bs)
@@ -23,7 +25,7 @@ def pkcs7_unpad(bs, block_size):
     """
     # Check whether valid pkcs#7 padding.
     if not is_pkcs7(bs, block_size):
-        raise Exception('Invalid pkcs#7 padding or no padding.')
+        raise Exception('Invalid pkcs#7 padding.')
 
     last = ord(bs[-1])
     return bs[:-last]
