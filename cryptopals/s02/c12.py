@@ -63,7 +63,7 @@ def decrypt_block(n, suffix, length, oracle):
     """
     Decrypts one block of the hidden suffix appended to the user input in the
     oracle.
-    """
+    """ 
     for i in range(16):
         # If length of suffix is equal to the length of the suffix, return.
         if len(suffix) == length:

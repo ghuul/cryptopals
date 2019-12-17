@@ -13,7 +13,5 @@ def hamming_distance(b1, b2):
 
     # Calculate the hamming distance.
     x = bytearray([a ^ b for a, b in zip(b1, b2)])
-    dist = 0
-    for b in x:
-        dist += sum([1 for bit in bin(b) if bit == '1'])
-    return dist
+    return sum(sum([1 for bit in bin(b) if bit == '1']) for b in x)
+
