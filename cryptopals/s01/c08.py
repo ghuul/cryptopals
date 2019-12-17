@@ -13,6 +13,6 @@ def main():
     lines = [bytearray.fromhex(line) for line in lines]
 
     # Detect which one is most likely AES in ECB mode.
-    score, r, line = aes.detect_ecb(lines)
-    print score, bytes(r).encode('hex'), line
+    out = [bytes(c).encode('hex') for c in aes.detect_ecb_multi(lines)]
+    print out
 

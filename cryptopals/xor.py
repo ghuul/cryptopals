@@ -12,7 +12,7 @@ def fixed(b1, b2):
     """
     # Ensure that byte arrays are of equal length.
     if len(b1) != len(b2):
-        raise "Byte arrays are not of equal length."
+        raise Exception('Byte arrays are not of equal length.')
 
     # XOR byte arrays together and return.
     return bytearray([x ^ y for x, y in zip(b1, b2)])

@@ -9,7 +9,7 @@ def hamming_distance(b1, b2):
     """
     # Ensure that both byte arrays are the same length.
     if len(b1) != len(b2):
-        raise 'Byte arrays are not of equal length.'
+        raise Exception('Byte arrays are not of equal length.')
 
     # Calculate the hamming distance.
     x = bytearray([a ^ b for a, b in zip(b1, b2)])
