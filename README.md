@@ -1,5 +1,6 @@
 # Cryptopals
 Cryptopals challenge solutions in Python.
+Find the challenges at [cryptopals.com](https://cryptopals.com).
 
 ## Challenges
 
