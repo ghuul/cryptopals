@@ -2,9 +2,7 @@
 Cryptopals challenge solutions in Python.
 Find the challenges at [cryptopals.com](https://cryptopals.com).
 
-## Challenges
-
-### Set 1 - Basics
+## Set 1 - Basics
 
  - [X] Challenge 01: Convert Hex to Base64
  - [X] Challenge 02: Fixed XOR 
@@ -15,7 +13,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [X] Challenge 07: AES in ECB Mode
  - [X] Challenge 08: Detect AES in ECB Mode
 
-### Set 2 - Block Crypto
+## Set 2 - Block Crypto
 
  - [X] Challenge 09: Implement PKCS#7 Padding
  - [X] Challenge 10: Implement AES in CBC Mode
@@ -26,7 +24,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [X] Challenge 15: PKCS#7 Padding Validation
  - [X] Challenge 16: CBC Bitflipping Attacks
 
-### Set 3 - Block and Stream Crypto
+## Set 3 - Block and Stream Crypto
 
  - [ ] Challenge 17: The CBC Padding Oracle
  - [ ] Challenge 18: Implement CTR, the Stream Cipher Mode
@@ -37,7 +35,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [ ] Challenge 23: Clone an MT19937 RNG From Its Output
  - [ ] Challenge 24: Create the MT19937 Stream Cipher and Break It
 
-### Set 4 - Stream Crypto and Randomness
+## Set 4 - Stream Crypto and Randomness
 
  - [ ] Challenge 25: Break 'random access read/write' AES CTR
  - [ ] Challenge 26: CTR Bitflipping
@@ -48,7 +46,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [ ] Challenge 31: Implement and Break HMAC-SHA1 With an Artificial Timing Leak
  - [ ] Challenge 32: Break HMAC-SHA1 With a Slightly Less Artificial Timing Leak
 
-### Set 5 - Diffie-Hellman and Friends
+## Set 5 - Diffie-Hellman and Friends
 
  - [ ] Challenge 33: Implement Diffie-Hellman
  - [ ] Challenge 34: Implement a MITM Key-Fixing Attack on Diffie-Hellman With Parameter Injection
@@ -59,7 +57,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [ ] Challenge 39: Implement RSA
  - [ ] Challenge 40: Implement an E=3 Broadcast Attack
 
-### Set 6 - RSA and DSA
+## Set 6 - RSA and DSA
 
  - [ ] Challenge 41: Implement Unpadded Message Recovery Oracle
  - [ ] Challenge 42: Bleichenbacher's E=3 RSA Attack
@@ -70,7 +68,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [ ] Challenge 47: Simple Bleichenbacher's PKCS 1.5 Padding Oracle
  - [ ] Challenge 48: Complete Bleichenbacher's PKCS 1.5 Padding Oracle
 
-### Set 7 - Hashes
+## Set 7 - Hashes
 
  - [ ] Challenge 49: CBC-MAC Message Forgery
  - [ ] Challenge 50: Hashing With CBC-MAC
@@ -81,7 +79,7 @@ Find the challenges at [cryptopals.com](https://cryptopals.com).
  - [ ] Challenge 55: MD4 Collisions
  - [ ] Challenge 56: RC4 Single-Byte Biases
 
-### Set 8 - Abstract Algebra
+## Set 8 - Abstract Algebra
 
  - [ ] Challenge 57: Diffie-Hellman Revisited - Small Subgroup Confinement
  - [ ] Challenge 58: Pollard's Method for Catching Kangaroos
